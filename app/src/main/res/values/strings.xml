@@ -4,4 +4,7 @@
     <string name="recipes_fragment">Recipes</string>
     <string name="favorite_recipes_fragment">Favorites</string>
     <string name="food_trivia_fragment">Trivia</string>
+    <string name="Recipes">Recipes</string>
+    <string name="Favourites">Favorites</string>
+    <string name="FoodTrivia">Food Trivia</string>
 </resources>
