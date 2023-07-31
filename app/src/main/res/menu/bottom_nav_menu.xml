@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/recipesFragment"
+        android:title="@string/recipes_fragment"
+        android:icon="@drawable/baseline_menu_book" />
+
+    <item
+        android:id="@+id/favoriteRecipesFragment"
+        android:title="@string/favorite_recipes_fragment"
+        android:icon="@drawable/baseline_star" />
+
+    <item
+        android:id="@+id/foodTriviaFragment"
+        android:title="@string/food_trivia_fragment"
+        android:icon="@drawable/baseline_emoji_objects" />
+</menu>
