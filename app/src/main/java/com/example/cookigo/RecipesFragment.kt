@@ -14,7 +14,6 @@ class RecipesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_recipes, container, false)
-
         return view
     }
 
