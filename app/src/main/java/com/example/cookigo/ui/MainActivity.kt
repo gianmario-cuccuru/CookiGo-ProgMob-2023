@@ -1,4 +1,4 @@
-package com.example.cookigo
+package com.example.cookigo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.cookigo.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +19,11 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigationView=findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         navController=findNavController(R.id.navHostFragment)
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.recipesFragment, R.id.favoriteRecipesFragment, R.id.foodTriviaFragment))
+        val appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.recipesFragment,
+            R.id.favoriteRecipesFragment,
+            R.id.foodTriviaFragment
+        ))
 
 
         bottomNavigationView.setupWithNavController(navController)

@@ -1,20 +1,20 @@
-package com.example.cookigo
+package com.example.cookigo.ui.fragments.foodtrivia
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.cookigo.R
 
-class RecipesFragment : Fragment() {
+class FoodTriviaFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_recipes, container, false)
-        return view
+        return inflater.inflate(R.layout.fragment_food_trivia, container, false)
     }
 
 }
