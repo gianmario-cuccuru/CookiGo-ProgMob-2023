@@ -1,4 +1,4 @@
-package com.example.cookigo
+package com.example.cookigo.util
 
 class Constants {
 

@@ -1,4 +1,4 @@
-package com.example.cookigo
+package com.example.cookigo.data.network
 
 import com.example.cookigo.models.FoodRecipe
 import retrofit2.Response

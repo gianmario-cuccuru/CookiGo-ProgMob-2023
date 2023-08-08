@@ -1,12 +1,10 @@
 package com.example.cookigo.di
 
-import com.example.cookigo.Constants.Companion.BASE_URL
-import com.example.cookigo.FoodRecipesApi
-import com.google.gson.Gson
+import com.example.cookigo.util.Constants.Companion.BASE_URL
+import com.example.cookigo.data.network.FoodRecipesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.internal.managers.ActivityRetainedComponentManager_LifecycleModule_ProvideActivityRetainedLifecycleFactory
 import dagger.hilt.android.internal.managers.ApplicationComponentManager
 import retrofit2.Retrofit
 import javax.inject.Singleton
@@ -48,7 +46,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApiService(retrofit: Retrofit): FoodRecipesApi{
+    fun provideApiService(retrofit: Retrofit): FoodRecipesApi {
         return retrofit.create(FoodRecipesApi::class.java)
     }
 }
