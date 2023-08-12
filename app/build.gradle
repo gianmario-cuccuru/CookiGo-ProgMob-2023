@@ -32,6 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding{
+        enabled = true;
+    }
 }
 
 dependencies {
@@ -61,4 +65,6 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
     kapt "androidx.hilt:hilt-compiler:1.0.0"
 
+    kapt "androidx.databinding:databinding-common:8.1.0"
+    kapt "com.android.databinding:compiler:3.1.4"
 }
