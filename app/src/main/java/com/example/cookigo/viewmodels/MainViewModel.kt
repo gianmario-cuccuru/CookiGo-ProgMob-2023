@@ -1,4 +1,4 @@
-package com.example.cookigo
+package com.example.cookigo.viewmodels
 
 import android.app.Application
 import android.content.Context
