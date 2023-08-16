@@ -17,5 +17,12 @@
     <color name="green">#00C980</color>
     <color name="mediumGray">#D1D1D1</color>
     <color name="dark">#313C44</color>
+    <color name="lightGray">#F9F9F9</color>
+
+    <color name="checked_chip_background_color">#70ffcc00</color>
+    <color name="chip_back_color">@color/lightGray</color>
+    <color name="checked_chip_text_color">@color/darkGray</color>
+    <color name="chip_def_text_color">@color/darkGray</color>
+
 
 </resources>
