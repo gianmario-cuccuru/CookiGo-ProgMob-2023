@@ -1,12 +1,15 @@
 package com.example.cookigo.ui.fragments.recipes
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookigo.viewmodels.MainViewModel
 import com.example.cookigo.R
@@ -14,8 +17,10 @@ import com.example.cookigo.adapters.RecipesAdapter
 import com.example.cookigo.databinding.FragmentRecipesBinding
 import com.example.cookigo.util.Constants.Companion.API_KEY
 import com.example.cookigo.util.NetworkResult
+import com.example.cookigo.util.observeOnce
 import com.example.cookigo.viewmodels.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class RecipesFragment : Fragment() {
@@ -43,9 +48,21 @@ class RecipesFragment : Fragment() {
         binding.mainViewModel = mainViewModel
 
         setupRecyclerView()
-        requestApiData()
-
+        readDatabase()
         return binding.root
+    }
+
+    private fun readDatabase() {
+        lifecycleScope.launch {
+            mainViewModel.readRecipes.observeOnce(viewLifecycleOwner) { database ->
+                if (database.isNotEmpty()){
+                    mAdapter.setData(database[0].foodRecipe)
+                    hideShimmerEffect()
+                } else {
+                    requestApiData()
+                }
+            }
+        }
     }
 
     private fun requestApiData() {
@@ -58,6 +75,7 @@ class RecipesFragment : Fragment() {
                 }
                 is NetworkResult.Error -> {
                     hideShimmerEffect()
+                    loadDataFromCache()
                     Toast.makeText(
                         requireContext(),
                         response.message.toString(),
@@ -69,6 +87,16 @@ class RecipesFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun loadDataFromCache(){
+       lifecycleScope.launch {
+           mainViewModel.readRecipes.observe(viewLifecycleOwner){database ->
+               if(database.isNotEmpty()){
+                   mAdapter.setData(database[0].foodRecipe)
+               }
+           }
+       }
     }
 
     private fun setupRecyclerView() {
@@ -87,6 +115,11 @@ class RecipesFragment : Fragment() {
         binding.shimmerFrameLayout.stopShimmer()
         binding.shimmerFrameLayout.visibility = View.GONE
         binding.recyclerview.visibility = View.VISIBLE
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

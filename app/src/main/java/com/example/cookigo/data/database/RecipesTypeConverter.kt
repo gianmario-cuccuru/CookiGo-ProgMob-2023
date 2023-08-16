@@ -1,4 +1,4 @@
-package com.example.cookigo
+package com.example.cookigo.data.database
 
 import androidx.room.TypeConverter
 import com.example.cookigo.models.FoodRecipe
