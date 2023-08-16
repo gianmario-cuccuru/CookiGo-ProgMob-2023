@@ -16,4 +16,6 @@
     <color name="yellow_icon">#FFC114</color>
     <color name="green">#00C980</color>
     <color name="mediumGray">#D1D1D1</color>
+    <color name="dark">#313C44</color>
+
 </resources>
