@@ -11,6 +11,7 @@ import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookigo.viewmodels.MainViewModel
 import com.example.cookigo.R
@@ -25,6 +26,9 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class RecipesFragment : Fragment() {
+
+    private val args by navArgs<RecipesFragmentArgs>()
+    var dataRequested = false
 
     private lateinit var mainViewModel: MainViewModel
     private lateinit var recipesViewModel: RecipesViewModel
@@ -61,17 +65,21 @@ class RecipesFragment : Fragment() {
     private fun readDatabase() {
         lifecycleScope.launch {
             mainViewModel.readRecipes.observeOnce(viewLifecycleOwner) { database ->
-                if (database.isNotEmpty()){
+                if (database.isNotEmpty() && !args.backFromBottomSheet || database.isNotEmpty() && dataRequested){
+                    Log.d("RecipesFragment", "readDatabase called")
                     mAdapter.setData(database[0].foodRecipe)
                     hideShimmerEffect()
                 } else {
+                    Log.d("RecipesFragment", "requestApiData called")
                     requestApiData()
+                    dataRequested = true
                 }
             }
         }
     }
 
     private fun requestApiData() {
+        Log.d("RecipesFragment", "requestApiData2 called!")
         mainViewModel.getRecipes(recipesViewModel.applyQueries())
         mainViewModel.recipesResponse.observe(viewLifecycleOwner) { response ->
             when (response) {
