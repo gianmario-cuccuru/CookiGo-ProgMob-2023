@@ -1,12 +1,16 @@
 package com.example.cookigo.bindingadapters
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import androidx.navigation.findNavController
 import coil.load
 import com.example.cookigo.R
+import com.example.cookigo.ui.fragments.recipes.RecipesFragmentDirections
 
 class RecipesRowBinding {
 
@@ -57,6 +61,20 @@ class RecipesRowBinding {
                 error(R.drawable.error_placeholder)
             }
         }
+
+        @BindingAdapter("onRecipeClickListener")
+        @JvmStatic
+        fun onRecipeClickListener(recipeRowLayout: ConstraintLayout, result: com.example.cookigo.models.Result){
+            recipeRowLayout.setOnClickListener{
+                try {
+                    val action = RecipesFragmentDirections.actionRecipesFragmentToDetailsActivity(result)
+                    recipeRowLayout.findNavController().navigate(action)
+                }catch (e: Exception){
+                    Log.d("onRecipeClickListener", e.toString())
+                }
+            }
+        }
+
     }
 
 }

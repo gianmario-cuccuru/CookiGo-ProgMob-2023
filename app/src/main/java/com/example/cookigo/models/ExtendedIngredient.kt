@@ -1,7 +1,10 @@
 package com.example.cookigo.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class ExtendedIngredient (
 
     @SerializedName("amount")
@@ -14,4 +17,4 @@ data class ExtendedIngredient (
     val name: String,
     @SerializedName("original")
     val original: String
-)
+): Parcelable
