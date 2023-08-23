@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import coil.load
 import com.example.cookigo.R
 import com.example.cookigo.ui.fragments.recipes.RecipesFragmentDirections
+import org.jsoup.Jsoup
 
 class RecipesRowBinding {
 
@@ -72,6 +73,15 @@ class RecipesRowBinding {
                 }catch (e: Exception){
                     Log.d("onRecipeClickListener", e.toString())
                 }
+            }
+        }
+
+        @BindingAdapter("parseHtml")
+        @JvmStatic
+        fun parseHtml(textView: TextView, description: String?){
+            if(description != null){
+                val desc = Jsoup.parse(description).text()
+                textView.text = desc
             }
         }
 
