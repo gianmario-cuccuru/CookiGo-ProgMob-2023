@@ -24,5 +24,6 @@
     <color name="checked_chip_text_color">@color/darkGray</color>
     <color name="chip_def_text_color">@color/darkGray</color>
 
+    <color name="card_background_color">#f1f1f1</color>
 
 </resources>
