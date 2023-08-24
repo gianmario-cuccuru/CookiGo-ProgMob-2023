@@ -10,6 +10,7 @@ import coil.load
 import com.example.cookigo.R
 import com.example.cookigo.databinding.FragmentOverviewBinding
 import com.example.cookigo.models.Result
+import com.example.cookigo.util.Constants.Companion.RECIPE_RESULT_KEY
 import com.example.cookigo.util.retrieveParcelable
 import org.jsoup.Jsoup
 
@@ -26,7 +27,7 @@ class OverviewFragment : Fragment() {
         _binding = FragmentOverviewBinding.inflate(inflater, container, false)
 
         val args = arguments
-        val myBundle: Result? = args!!.retrieveParcelable("recipeBundle") as Result?
+        val myBundle: Result? = args!!.retrieveParcelable(RECIPE_RESULT_KEY) as Result?
 
         binding.mainImageView.load(myBundle?.image)
         binding.titleTextView.text = myBundle?.title
@@ -36,6 +37,7 @@ class OverviewFragment : Fragment() {
             val summary = Jsoup.parse(it).text()
             binding.summaryTextView.text = summary
         }
+
 
         if(myBundle?.vegetarian == true){
             binding.vegetarianImageView.setColorFilter(ContextCompat.getColor(requireContext(), R.color.green))

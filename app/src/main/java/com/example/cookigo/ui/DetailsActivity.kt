@@ -12,6 +12,7 @@ import com.example.cookigo.databinding.ActivityDetailsBinding
 import com.example.cookigo.ui.fragments.ingredients.IngredientsFragment
 import com.example.cookigo.ui.fragments.instructions.InstructionsFragment
 import com.example.cookigo.ui.fragments.overview.OverviewFragment
+import com.example.cookigo.util.Constants.Companion.RECIPE_RESULT_KEY
 import com.google.android.material.tabs.TabLayoutMediator
 
 class DetailsActivity : AppCompatActivity() {
