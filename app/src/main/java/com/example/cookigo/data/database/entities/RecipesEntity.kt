@@ -1,4 +1,4 @@
-package com.example.cookigo.data.database
+package com.example.cookigo.data.database.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

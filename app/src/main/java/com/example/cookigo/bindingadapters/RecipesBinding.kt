@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.example.cookigo.data.database.RecipesEntity
+import com.example.cookigo.data.database.entities.RecipesEntity
 import com.example.cookigo.models.FoodRecipe
 import com.example.cookigo.util.NetworkResult
 
