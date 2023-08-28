@@ -24,6 +24,11 @@
     <color name="checked_chip_text_color">@color/darkGray</color>
     <color name="chip_def_text_color">@color/darkGray</color>
 
-    <color name="card_background_color">#f1f1f1</color>
+    <color name="card_background_color">@color/white</color>
+    <color name="card_background_light_color">#106200EA</color>
+    <color name="selected_stroke_color">#995cf0</color>
+    <color name="statusBarColor">@color/yellow_2</color>
+    <color name="contextualStatusBarColor">#262626</color>
+
 
 </resources>
