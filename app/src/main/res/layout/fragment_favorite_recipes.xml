@@ -15,6 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background_color"
         tools:context=".ui.fragments.favorites.FavoriteRecipesFragment">
 
 
@@ -40,6 +41,7 @@
             android:layout_height="100dp"
             android:alpha="0.5"
             android:src="@drawable/baseline_menu_book"
+            app:tint="@color/light_medium_gray"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

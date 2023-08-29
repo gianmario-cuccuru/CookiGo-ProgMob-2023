@@ -32,13 +32,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5"
-            app:strokeColor="@color/lightMediumGray"
+            app:strokeColor="@color/light_medium_gray"
             app:strokeWidth="1dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white">
+                android:background="@color/card_background_color">
 
                 <ImageView
                     android:id="@+id/recipe_imageView"
@@ -60,7 +60,7 @@
                     android:layout_marginEnd="12dp"
                     android:maxLines="2"
                     android:text="@{result.title}"
-                    android:textColor="@color/darker"
+                    android:textColor="@color/title_color"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,7 @@
                     android:layout_marginTop="12dp"
                     android:ellipsize="end"
                     android:maxLines="3"
-                    android:textColor="@color/darkGray"
+                    android:textColor="@color/description_color"
                     app:layout_constraintEnd_toEndOf="@+id/title_textView"
                     app:layout_constraintStart_toStartOf="@+id/title_textView"
                     app:layout_constraintTop_toBottomOf="@+id/title_textView" />
@@ -136,7 +136,8 @@
                     app:layout_constraintEnd_toEndOf="@+id/leaf_textView"
                     app:layout_constraintStart_toStartOf="@+id/leaf_textView"
                     app:layout_constraintTop_toTopOf="@+id/clock_imageView"
-                    app:srcCompat="@drawable/flower" />
+                    app:srcCompat="@drawable/flower"
+                    app:tint="@color/default_grey"/>
 
                 <TextView
                     android:id="@+id/leaf_textView"

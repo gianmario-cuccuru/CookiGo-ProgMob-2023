@@ -42,7 +42,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5"
-            app:strokeColor="@color/lightMediumGray">
+            app:strokeColor="@color/light_medium_gray">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

@@ -12,6 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background_color"
         tools:context=".ui.fragments.recipes.RecipesFragment">
 
         <com.facebook.shimmer.ShimmerFrameLayout
@@ -60,7 +61,7 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/baseline_restaurant"
-            app:backgroundTint="@color/yellow_2"
+            app:backgroundTint="@color/dark_yellow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:tint="@color/black" />

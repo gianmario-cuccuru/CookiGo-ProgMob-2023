@@ -120,7 +120,7 @@ class FavoriteRecipesAdapter(
         multiSelection = true
         selectedRecipes.clear()
         myViewHolders.forEach{holder ->
-            changeRecipeStyle(holder, R.color.card_background_color, R.color.lightMediumGray)
+            changeRecipeStyle(holder, R.color.card_background_color, R.color.light_medium_gray)
         }
         applyStatusBarColor(R.color.statusBarColor)
     }
