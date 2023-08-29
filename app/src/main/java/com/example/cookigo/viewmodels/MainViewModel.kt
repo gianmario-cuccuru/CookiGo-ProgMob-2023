@@ -9,6 +9,7 @@ import com.example.cookigo.data.Repository
 import com.example.cookigo.data.database.entities.FavoritesEntity
 import com.example.cookigo.data.database.entities.RecipesEntity
 import com.example.cookigo.models.FoodRecipe
+import com.example.cookigo.models.FoodTrivia
 import com.example.cookigo.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -43,6 +44,7 @@ class MainViewModel @Inject constructor(
 
     var recipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
     var searchRecipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
+    var foodTriviaResponse: MutableLiveData<NetworkResult<FoodTrivia>> = MutableLiveData()
 
     fun getRecipes(queries: Map<String, String>) = viewModelScope.launch {
         getRecipesSafeCall(queries)
@@ -50,6 +52,10 @@ class MainViewModel @Inject constructor(
 
     fun searchRecipes(searchQuery: Map<String, String>) = viewModelScope.launch {
         searchRecipesSafeCall(searchQuery)
+    }
+
+    fun getFoodTrivia(apiKey: String) = viewModelScope.launch {
+        getFoodTriviaSafeCall(apiKey)
     }
 
 
@@ -86,6 +92,20 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    private suspend fun getFoodTriviaSafeCall(apiKey: String) {
+        foodTriviaResponse.value = NetworkResult.Loading()
+        if (hasInternetConnection()){
+            try {
+                val response = repository.remote.getFoodTrivia(apiKey)
+                foodTriviaResponse.value = handleFoodTriviaResponse(response)
+            }catch (e: Exception){
+                foodTriviaResponse.value = NetworkResult.Error("Recipes not found.")
+            }
+        }else{
+            foodTriviaResponse.value = NetworkResult.Error("No Internet Connection")
+        }
+    }
+
     private fun offlineCacheResponse(foodRecipe: FoodRecipe) {
         val recipesEntity = RecipesEntity(foodRecipe)
         insertRecipes(recipesEntity)
@@ -108,6 +128,24 @@ class MainViewModel @Inject constructor(
             }
             else -> {
                 return NetworkResult.Error(response.message())
+            }
+        }
+    }
+
+    private fun handleFoodTriviaResponse(response: Response<FoodTrivia>): NetworkResult<FoodTrivia>? {
+        return when{
+            response.message().toString().contains("timeout")->{
+                return NetworkResult.Error("Timeout")
+            }
+            response.code() == 402 -> {
+                return NetworkResult.Error("API Key Limited.")
+            }
+            response.isSuccessful -> {
+                val foodTrivia = response.body()
+                return NetworkResult.Success(foodTrivia!!)
+            }
+            else -> {
+                NetworkResult.Error(response.message())
             }
         }
     }
