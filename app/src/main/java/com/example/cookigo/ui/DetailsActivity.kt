@@ -76,7 +76,7 @@ class DetailsActivity : AppCompatActivity() {
             try {
                 for (savedRecipe in favoritesEntity) {
                     if (savedRecipe.result.id == args.result.id) {
-                        changeMenuItemColor(menuItem, R.color.red)
+                        changeMenuItemColor(menuItem, R.color.green)
                         savedRecipeId = savedRecipe.id
                         recipeSaved = true
                     }
@@ -107,7 +107,7 @@ class DetailsActivity : AppCompatActivity() {
             args.result
         )
         mainViewModel.insertFavoriteRecipe(favoritesEntity)
-        changeMenuItemColor(item, R.color.red)
+        changeMenuItemColor(item, R.color.green)
         showSnackBar("Added to Favorites")
         recipeSaved = true
     }
