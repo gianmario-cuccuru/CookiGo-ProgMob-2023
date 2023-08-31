@@ -86,12 +86,11 @@
                     android:id="@+id/favorite_heart_imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="36dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/favorite_heart_textView"
-                    app:layout_constraintStart_toEndOf="@+id/favorite_recipe_imageView"
+                    app:layout_constraintStart_toStartOf="@+id/favorite_heart_textView"
                     app:layout_constraintTop_toBottomOf="@+id/favorite_description_textView"
                     app:srcCompat="@drawable/heart"
                     app:tint="@color/red" />
@@ -115,7 +114,7 @@
                     app:layout_constraintStart_toStartOf="@+id/favorite_clock_textView"
                     app:layout_constraintTop_toTopOf="@+id/favorite_heart_imageView"
                     app:srcCompat="@drawable/clock"
-                    app:tint="@color/yellow_icon" />
+                    app:tint="@color/yellow" />
 
                 <TextView
                     android:id="@+id/favorite_clock_textView"
@@ -125,7 +124,7 @@
                     android:layout_marginStart="24dp"
                     android:text="100"
                     android:textAlignment="center"
-                    android:textColor="@color/yellow_icon"
+                    android:textColor="@color/yellow"
                     app:layout_constraintStart_toEndOf="@+id/favorite_heart_textView"
                     app:layout_constraintTop_toBottomOf="@+id/favorite_clock_imageView" />
 

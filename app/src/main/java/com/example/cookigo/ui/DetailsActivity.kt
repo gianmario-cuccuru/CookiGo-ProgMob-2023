@@ -38,7 +38,7 @@ class DetailsActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
-        binding.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.black))
+        binding.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val fragments = ArrayList<Fragment>()
@@ -76,7 +76,7 @@ class DetailsActivity : AppCompatActivity() {
             try {
                 for (savedRecipe in favoritesEntity) {
                     if (savedRecipe.result.id == args.result.id) {
-                        changeMenuItemColor(menuItem, R.color.green)
+                        changeMenuItemColor(menuItem, R.color.yellow)
                         savedRecipeId = savedRecipe.id
                         recipeSaved = true
                     }
@@ -107,7 +107,7 @@ class DetailsActivity : AppCompatActivity() {
             args.result
         )
         mainViewModel.insertFavoriteRecipe(favoritesEntity)
-        changeMenuItemColor(item, R.color.green)
+        changeMenuItemColor(item, R.color.yellow)
         showSnackBar("Added to Favorites")
         recipeSaved = true
     }

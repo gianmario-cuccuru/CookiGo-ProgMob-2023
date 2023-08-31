@@ -61,10 +61,10 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/baseline_restaurant"
-            app:backgroundTint="@color/dark_yellow"
+            app:backgroundTint="@color/color_primary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@color/black" />
+            app:tint="@color/white" />
 
         <ImageView
             android:id="@+id/error_imageView"

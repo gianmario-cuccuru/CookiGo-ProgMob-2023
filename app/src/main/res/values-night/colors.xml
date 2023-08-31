@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="color_primary">#e23e3e</color>
+    <color name="color_primary_dark">#de2121</color>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#ffd634</color>
     <color name="purple_700">#ffcc00</color>
@@ -9,19 +12,17 @@
     <color name="black">#FF000000</color>
     <color name="black_2">#121212</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="light_yellow">#ffd634</color>
-    <color name="dark_yellow">#ffcc00</color>
     <color name="light_medium_gray">#80D1D1D1</color>
     <color name="darker">#151B20</color>
     <color name="dark_gray">#4B4B4B</color>
     <color name="red">#FF4646</color>
-    <color name="yellow_icon">#FFC114</color>
     <color name="green">#00C980</color>
+    <color name="yellow">#ffd634</color>
     <color name="mediumGray">#D1D1D1</color>
     <color name="dark">#313C44</color>
     <color name="light_gray">#F9F9F9</color>
 
-    <color name="checked_chip_background_color">@color/dark_yellow</color>
+    <color name="checked_chip_background_color">#70e23e3e</color>
     <color name="chip_back_color">@color/dark</color>
     <color name="checked_chip_text_color">@color/black</color>
     <color name="chip_def_text_color">@color/title_color</color>
@@ -42,6 +43,7 @@
     <color name="item_color">@color/light_gray</color>
     <color name="ingredient_card_background_color">@color/darker</color>
     <color name="stroke_color">@color/dark_gray</color>
+    <color name="icon_color">@color/white</color>
 
 
 </resources>

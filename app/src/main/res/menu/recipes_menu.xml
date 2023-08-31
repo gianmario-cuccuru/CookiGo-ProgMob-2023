@@ -7,8 +7,8 @@
         android:title="@string/search"
         android:icon="@drawable/baseline_search"
         app:showAsAction="ifRoom"
-        android:iconTint="@color/black"
-        tools:targetApi="o"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+        android:iconTint="@color/white"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        tools:targetApi="o" />
 
 </menu>
