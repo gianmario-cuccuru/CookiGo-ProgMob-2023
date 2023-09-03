@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
-import com.example.cookigo.R
 import com.example.cookigo.databinding.RecipesBottomSheetBinding
 import com.example.cookigo.util.Constants.Companion.DEFAULT_DIET_TYPE
 import com.example.cookigo.util.Constants.Companion.DEFAULT_MEAL_TYPE
@@ -44,7 +43,7 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
         recipesViewModel.readMealAndDietType.asLiveData().observe(viewLifecycleOwner) { value ->
             mealTypeChip = value.selectedMealType
             dietTypeChip = value.selectedDietType
-            updateChip(value.selectedMealTYpeId, binding.mealTypeChipGroup)
+            updateChip(value.selectedMealTypeId, binding.mealTypeChipGroup)
             updateChip(value.selectedDietTypeId, binding.dietTypeChipGroup)
         }
 
@@ -63,7 +62,7 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
         }
 
         binding.applyButton.setOnClickListener{
-            recipesViewModel.savaMealAndDietType(
+            recipesViewModel.saveMealAndDietTypeTemp(
                 mealTypeChip,
                 mealTypeChipId,
                 dietTypeChip,
@@ -80,7 +79,9 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
     private fun updateChip(chipId: Int, chipGroup: ChipGroup){
         if(chipId != 0){
             try {
-                chipGroup.findViewById<Chip>(chipId).isChecked = true
+                val targetView = chipGroup.findViewById<Chip>(chipId)
+                targetView.isChecked = true
+                chipGroup.requestChildFocus(targetView, targetView)
             }catch (e: Exception){
                 Log.d("RecipesBottomSheet", e.message.toString())
             }

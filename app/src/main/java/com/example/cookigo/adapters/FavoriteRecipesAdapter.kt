@@ -74,8 +74,8 @@ class FavoriteRecipesAdapter(
                 applySelection(holder, currentRecipe)
                 true
             }else{
-                multiSelection = false
-                false
+                applySelection(holder, currentRecipe)
+                true
             }
 
         }
@@ -128,7 +128,7 @@ class FavoriteRecipesAdapter(
     private fun applySelection(holder: MyViewHolder, currentRecipe: FavoritesEntity){
         if (selectedRecipes.contains(currentRecipe)){
             selectedRecipes.remove(currentRecipe)
-            changeRecipeStyle(holder, R.color.card_background_color, R.color.selected_stroke_color)
+            changeRecipeStyle(holder, R.color.card_background_color, R.color.stroke_color)
             hideActionMode()
         }else{
             selectedRecipes.add(currentRecipe)
@@ -148,6 +148,7 @@ class FavoriteRecipesAdapter(
     private fun hideActionMode(){
         if (selectedRecipes.isEmpty()) {
             mActionMode.finish()
+            multiSelection = false
         }
     }
 

@@ -80,9 +80,6 @@ class DetailsActivity : AppCompatActivity() {
                         savedRecipeId = savedRecipe.id
                         recipeSaved = true
                     }
-                    else{
-                        changeMenuItemColor(menuItem, R.color.white)
-                    }
                 }
             } catch (e: Exception) {
                 Log.d("DetailsActivity", e.message.toString())

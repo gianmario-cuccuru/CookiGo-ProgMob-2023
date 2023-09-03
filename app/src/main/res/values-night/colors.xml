@@ -22,11 +22,11 @@
     <color name="dark">#313C44</color>
     <color name="light_gray">#F9F9F9</color>
 
-    <color name="checked_chip_background_color">#70e23e3e</color>
+    <color name="checked_chip_background_color">#90e23e3e</color>
     <color name="chip_back_color">@color/dark</color>
-    <color name="checked_chip_text_color">@color/black</color>
+    <color name="checked_chip_text_color">@color/white</color>
     <color name="chip_def_text_color">@color/title_color</color>
-    <color name="chip_icon_tint">@color/black</color>
+    <color name="chip_icon_tint">@color/white</color>
 
 
     <color name="card_background_color">@color/darker</color>

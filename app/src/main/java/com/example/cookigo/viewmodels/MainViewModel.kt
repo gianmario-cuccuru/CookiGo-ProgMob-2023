@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.os.Parcelable
 import androidx.lifecycle.*
 import com.example.cookigo.data.Repository
 import com.example.cookigo.data.database.entities.FavoritesEntity
@@ -22,6 +23,9 @@ class MainViewModel @Inject constructor(
     private val repository: Repository,
     application: Application
 ): AndroidViewModel(application) {
+
+    var recyclerViewState: Parcelable? = null
+
 
     val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readRecipes().asLiveData()
     val readFavoriteRecipes: LiveData<List<FavoritesEntity>> = repository.local.readFavoriteRecipes().asLiveData()

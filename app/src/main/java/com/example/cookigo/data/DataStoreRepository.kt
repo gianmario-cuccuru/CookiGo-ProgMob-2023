@@ -59,7 +59,7 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
 
 data class MealAndDietType(
     val selectedMealType: String,
-    val selectedMealTYpeId: Int,
+    val selectedMealTypeId: Int,
     val selectedDietType: String,
     val selectedDietTypeId: Int
 )
