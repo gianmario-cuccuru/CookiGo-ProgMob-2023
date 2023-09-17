@@ -22,5 +22,4 @@ interface RecipesDao {
     @Delete
     suspend fun deleteFavoriteRecipe(favoritesEntity: FavoritesEntity)
 
-
 }

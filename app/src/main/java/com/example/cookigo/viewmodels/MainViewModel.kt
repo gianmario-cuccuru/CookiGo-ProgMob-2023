@@ -26,11 +26,10 @@ class MainViewModel @Inject constructor(
 
     var recyclerViewState: Parcelable? = null
 
-
     val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readRecipes().asLiveData()
     val readFavoriteRecipes: LiveData<List<FavoritesEntity>> = repository.local.readFavoriteRecipes().asLiveData()
 
-    private fun insertRecipes(recipesEntity: RecipesEntity) =
+    fun insertRecipes(recipesEntity: RecipesEntity) =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.insertRecipes(recipesEntity)
         }
@@ -154,7 +153,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    private fun hasInternetConnection(): Boolean{
+    internal fun hasInternetConnection(): Boolean{
         val connectivityManager = getApplication<Application>().getSystemService(
             Context.CONNECTIVITY_SERVICE
         ) as ConnectivityManager

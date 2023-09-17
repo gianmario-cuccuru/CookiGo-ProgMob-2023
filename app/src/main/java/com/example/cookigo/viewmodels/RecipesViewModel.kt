@@ -27,7 +27,7 @@ class RecipesViewModel @Inject constructor(
     private val dataStoreRepository: DataStoreRepository
     ): AndroidViewModel(application) {
 
-    private lateinit var mealAndDiet: MealAndDietType
+    lateinit var mealAndDiet: MealAndDietType
     val readMealAndDietType = dataStoreRepository.readMealAndDietType
 
     fun saveMealAndDietType() =
