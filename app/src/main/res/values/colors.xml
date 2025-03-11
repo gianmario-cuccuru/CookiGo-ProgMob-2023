@@ -1,10 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="color_primary">#e23e3e</color>
+    <color name="color_primary_dark">#de2121</color>
+
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+    <color name="purple_500">#ffd634</color>
+    <color name="purple_700">#ffcc00</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="black_2">#121212</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="light_medium_gray">#80D1D1D1</color>
+    <color name="darker">#151B20</color>
+    <color name="dark_gray">#4B4B4B</color>
+    <color name="red">#FF4646</color>
+    <color name="green">#00C980</color>
+    <color name="yellow">#ffd634</color>
+    <color name="mediumGray">#D1D1D1</color>
+    <color name="dark">#313C44</color>
+    <color name="light_gray">#F9F9F9</color>
+    <color name="default_grey">#757575</color>
+
+    <color name="checked_chip_background_color">#70e23e3e</color>
+    <color name="chip_back_color">@color/light_medium_gray</color>
+    <color name="checked_chip_text_color">@color/black</color>
+    <color name="chip_def_text_color">@color/black</color>
+    <color name="chip_icon_tint">@color/black</color>
+
+    <color name="card_background_color">#f1f1f1</color>
+    <color name="card_background_light_color">#106200EA</color>
+    <color name="selected_stroke_color">#995cf0</color>
+    <color name="statusBarColor">@color/color_primary_dark</color>
+    <color name="contextualStatusBarColor">#262626</color>
+
+    <color name="background_color">@color/white</color>
+    <color name="title_color">@color/darker</color>
+    <color name="description_color">@color/dark_gray</color>
+
+    <color name="app_bar_color">@color/color_primary</color>
+    <color name="item_color">@color/dark_gray</color>
+    <color name="ingredient_card_background_color">#f1f1f1</color>
+    <color name="stroke_color">@color/light_medium_gray</color>
+    <color name="icon_color">@color/black</color>
+
+
+
 </resources>
